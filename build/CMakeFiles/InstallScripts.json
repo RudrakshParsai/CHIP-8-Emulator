@@ -1,0 +1,10 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Users/Rudraksh Parsai/NUCLEAR_LAUNCH_CODES/C++/chip8Emu/New folder/2019-chip8-emulator/build/cmake_install.cmake",
+		"C:/Users/Rudraksh Parsai/NUCLEAR_LAUNCH_CODES/C++/chip8Emu/New folder/2019-chip8-emulator/build/3rdParty/glad/cmake_install.cmake",
+		"C:/Users/Rudraksh Parsai/NUCLEAR_LAUNCH_CODES/C++/chip8Emu/New folder/2019-chip8-emulator/build/3rdParty/sdl-2.0.20/cmake_install.cmake",
+		"C:/Users/Rudraksh Parsai/NUCLEAR_LAUNCH_CODES/C++/chip8Emu/New folder/2019-chip8-emulator/build/3rdParty/imgui-1.88/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

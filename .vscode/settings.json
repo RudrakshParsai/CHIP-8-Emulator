@@ -1,0 +1,11 @@
+{
+    // "cmake.debugConfig": {
+    //     "args": ["10", "3", "${workspaceFolder}/pong.rom"]
+    // },
+    "cmake.configureArgs": [
+        "-DSDL_DIRECTX=OFF",
+        "-DSDL_RENDER_D3D=OFF",
+        "-DSDL_WGI=OFF"
+
+    ]
+}

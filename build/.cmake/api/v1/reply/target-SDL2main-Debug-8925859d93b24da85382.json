@@ -1,0 +1,127 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "3rdParty/sdl-2.0.20/libSDL2maind.a"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"add_library",
+			"install",
+			"target_include_directories"
+		],
+		"files" : 
+		[
+			"3rdParty/sdl-2.0.20/CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 2752,
+				"parent" : 0
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 2862,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 2755,
+				"parent" : 0
+			},
+			{
+				"command" : 2,
+				"file" : 0,
+				"line" : 2756,
+				"parent" : 0
+			}
+		]
+	},
+	"codemodelVersion" : 
+	{
+		"major" : 2,
+		"minor" : 9
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : " -idirafter \"C:/Users/Rudraksh Parsai/NUCLEAR_LAUNCH_CODES/C++/chip8Emu/New folder/2019-chip8-emulator/3rdParty/sdl-2.0.20/src/video/khronos\" -msse3 -msse2 -msse -m3dnow -mmmx -fdiagnostics-color=always -Wshadow -fvisibility=hidden -Wdeclaration-after-statement -Werror=declaration-after-statement -fno-strict-aliasing -Wall  -g"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 3,
+					"path" : "C:/Users/Rudraksh Parsai/NUCLEAR_LAUNCH_CODES/C++/chip8Emu/New folder/2019-chip8-emulator/build/3rdParty/sdl-2.0.20/include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "C:/Users/Rudraksh Parsai/NUCLEAR_LAUNCH_CODES/C++/chip8Emu/New folder/2019-chip8-emulator/3rdParty/sdl-2.0.20/include"
+				}
+			],
+			"language" : "C",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"id" : "SDL2main::@d0fad542f30f869d40af",
+	"install" : 
+	{
+		"destinations" : 
+		[
+			{
+				"backtrace" : 2,
+				"path" : "lib"
+			}
+		],
+		"prefix" : 
+		{
+			"path" : "C:/Program Files (x86)/chip8"
+		}
+	},
+	"name" : "SDL2main",
+	"nameOnDisk" : "libSDL2maind.a",
+	"paths" : 
+	{
+		"build" : "3rdParty/sdl-2.0.20",
+		"source" : "3rdParty/sdl-2.0.20"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "3rdParty/sdl-2.0.20/src/main/windows/SDL_windows_main.c",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}
