@@ -1,64 +1,61 @@
-# CHIP-8 emulator
+# CHIP-8 Emulator
 
-A CHIP-8 interpreter with an SDL2 front end. It runs the classic 1970s home-computer games and test ROMs: a 64x32 monochrome display, 16 general-purpose registers, an index register, a 16-level call stack, a delay timer, and a hexadecimal keypad.
+A simple CHIP-8 interpreter written in C++ with SDL2 for rendering and input. It can run classic CHIP-8 games and test ROMs on a 64x32 monochrome display. 
 
 ## Features
 
-- Full base CHIP-8 instruction set, including the font, binary-coded decimal, and key-press opcodes
-- Sprite drawing with per-pixel bounds wrapping, so sprites near the screen edge stay in bounds
-- Delay timer ticking at the frame rate
-- Resizable window; the 64x32 framebuffer scales with it
+- Full CHIP-8 instruction set implementation
+- 64x32 monochrome display with sprite wrapping
+- 16-key hex keypad input
+- Configurable window scaling and CPU cycle speed
+- Delay timer support
+
+## Dependencies
+
+All required dependencies (SDL2, glad, and ImGui) are included in the `3rdParty/` directory. 
 
 ## Building
 
-Requirements: CMake 3.14 or newer, Ninja, and a C++11 compiler. On Windows this project is normally built with the MSYS2 UCRT64 GCC toolchain. SDL2, glad and ImGui are bundled under `3rdParty/` and built by CMake.
+Requirements: CMake 3.14+, Ninja, and a C++11 compatible compiler. 
 
-```
-cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Debug \
-  -DSDL_DIRECTX=OFF -DSDL_RENDER_D3D=OFF -DSDL_WGI=OFF
+```bash
+cmake -S . -B build -G Ninja -DCMAKE_BUILD_TYPE=Release
 cmake --build build
 ```
 
-The `SDL_*` switches disable the DirectX code paths in SDL2, which fail to compile with some MinGW setups. If you build from Visual Studio Code, the same arguments belong in `cmake.configureArgs` in `.vscode/settings.json`.
+*On Windows with MinGW, you may need to pass additional SDL flags as shown in the CMake configuration.* 
 
-## Running
+## Usage
 
+```bash
+build/chip8.exe <Scale> <Cycle Delay (ms)> <Path to ROM>
 ```
-build/chip8.exe <Scale> <Cycle delay in ms> <path to ROM>
-```
 
-Examples:
+### Example
 
-```
+```bash
 build/chip8.exe 10 3 IBM.ch8
-build/chip8.exe 10 3 br8kout.ch8
 ```
 
-`Scale` multiplies the 64x32 framebuffer, so a scale of 10 gives a 640x320 window. `Cycle delay` is the pause between CPU cycles in milliseconds; smaller values run faster. Escape quits.
-
-Test ROMs at the repo root:
-
-- `IBM.ch8` draws "IBM" and exercises the basic draw path.
-- `test_opcode.ch8` runs through a set of opcodes and prints pass/fail to the framebuffer.
-- `br8kout.ch8` is a Breakout clone and needs the keypad.
+- `Scale` - Multiplies the 64x32 framebuffer (e.g. scale 10 = 640x320 window)
+- `Cycle Delay` - Milliseconds to pause between CPU cycles (lower values = faster emulation)
+- `ESC` - Quit the emulator
 
 ## Controls
 
-CHIP-8 expects a 16-key hex pad. The mapping to the keyboard (CHIP-8 key first, then the generated key):
+| CHIP-8 Key | Keyboard Key |
+|------------|--------------|
+| 1 2 3 C    | 1 2 3 4      |
+| 4 5 6 D    | Q W E R      |
+| 7 8 9 E    | A S D F      |
+| A 0 B F    | Z X C V      |
 
-```
-1 2 3 C   ->   1 2 3 4
-4 5 6 D   ->   Q W E R
-7 8 9 E   ->   A S D F
-A 0 B F   ->   Z X C V
-```
+## Included ROMs
 
-## Source layout
-
-- `Source/Chip8.cpp`, `Source/Chip8.hpp`: the interpreter, opcode dispatch, and the framebuffer
-- `Source/Platform.cpp`, `Source/Platform.hpp`: SDL window, renderer, texture, and keypad input
-- `Source/Main.cpp`: the main loop and the cycle timer
+- `IBM.ch8` - Displays the IBM logo
+- `test_opcode.ch8` - Opcode test suite
+- `br8kout.ch8` - Breakout clone
 
 ## License
 
-See the `LICENSE` file.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for more details.
