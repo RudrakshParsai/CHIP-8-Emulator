@@ -34,7 +34,7 @@ build/chip8.exe <Scale> <Cycle Delay (ms)> <Path to ROM>
 ### Example
 
 ```bash
-build/chip8.exe 10 3 IBM.ch8
+build/chip8.exe 10 3 roms/IBM.ch8
 ```
 
 - `Scale` - Multiplies the 64x32 framebuffer (e.g. scale 10 = 640x320 window)
@@ -52,9 +52,9 @@ build/chip8.exe 10 3 IBM.ch8
 
 ## Included ROMs
 
-- `IBM.ch8` - Displays the IBM logo
-- `test_opcode.ch8` - Opcode test suite
-- `br8kout.ch8` - Breakout clone
+- `roms/IBM.ch8` - Displays the IBM logo
+- `roms/test_opcode.ch8` - Opcode test suite
+- `roms/br8kout.ch8` - Breakout clone
 
 ## License
 
